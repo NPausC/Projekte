@@ -1,7 +1,6 @@
 
 //#region Images
-
-let images = [
+const images = [
     'Property 1=alaska-810433_1280.jpg', 
     'Property 1=anime-8788959_1280.jpg',
     'Property 1=blue-tit-8521052_1280.jpg',
@@ -20,7 +19,7 @@ let images = [
 let currentIndex = 0;
 
 function render() {
-    let container = document.getElementById('image-gallery');
+    const container = document.getElementById('image-gallery');
     container.innerHTML = '';
 
 for (let i = 0; i < images.length; i++) {
