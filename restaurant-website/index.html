@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <title>mein Restaurant</title>
+    <meta charset="utf-8" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .myBody {
+        margin: 0px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .aot-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      .playwrite {
+        font-family: "Playwrite NO", cursive;
+      }
+
+      .main-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 500;
+        color: rgb(240, 242, 234);
+        font-size: 30px;
+        filter: drop-shadow(2px 6px 7px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .container {
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-bottom: 8px;
+      }
+
+      .googlemaps {
+        height: 500px;
+        width: 100%;
+      }
+
+      .footer {
+        background-color: brown;
+        color: antiquewhite;
+        padding: 100px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
+       }
+
+      .footer-link {
+        color: antiquewhite;
+        text-decoration: none;
+      }
+
+      .footer-link:hover {
+        text-decoration: underline;
+        color: cadetblue;
+      }
+
+      .menu {
+        position: absolute;
+        top: 10;
+        right: 100px;
+      }
+
+      .menu a {
+        color: rgb(194, 26, 57);
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 20px;
+      }
+
+      .menu a:hover {
+        color: coral;
+      }
+
+      .order-btn {
+        color: black !important;
+        background-color: coral;
+        padding: 16px;
+      }
+
+      .order-btn:hover {
+        background-color: chartreuse;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+NO:wght@100..400&display=swap"
+      rel="stylesheet" />
+      
+  </head>
+
+  <body class="myBody">
+    <img class="aot-image" src="img/test.jpg" />
+
+    <div class="main-container">
+      <h1 class="playwrite">Herzlich willkommen</h1>
+      Hier findest du einen Überblick über unsere Spreisen
+    </div>
+
+    <div class="menu">
+      <a href="#contact">RESERVIEREN</a>
+      <a class="order-btn" href="#order">BESTELL ONLINE</a>
+      <a href="#callme">KONTAKT</a>
+      <a href="#driveto">ANFAHRT</a>
+    </div>
+
+    <div class="container">
+      <h2 class="playwrite">Unsere Öffnungszeiten</h2>
+
+      <table>
+        <tr>
+          <td>Mo - Fr:</td>
+          <td>12:00 - 23:00 Uhr</td>
+        </tr>
+        <tr>
+          <td>Sa:</td>
+          <td>11:00 - 24:00 Uhr</td>
+        </tr>
+        <tr>
+          <td>So:</td>
+          <td>12:00 - 24:00 Uhr</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="container" id="driveto">
+      <h2 class="playwrite">Anfahrt</h2>
+      Unsere Adresse lautet: Am Südhang 7, 09114 Chemnitz<br />
+
+      <iframe
+        class="googlemaps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2133.7570717395843!2d12.940277075866575!3d50.882205956183896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a7413463adcfd1%3A0x96628cd90f1812a6!2sAm%20S%C3%BCdhang%207%2C%2009114%20Chemnitz!5e1!3m2!1sde!2sde!4v1764585457575!5m2!1sde!2sde"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="container" id="order">
+      <h2 class="playwrite">Speisekarte</h2>
+      Hier findest du unsere aktuelle Tageskarte<br />
+
+      <table>
+        <tr>
+          <td>1</td>
+          <td>Pizza</td>
+          <td>8,99 €</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Salat</td>
+          <td>10,00 €</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Pasta</td>
+          <td>19,99 €</td>
+        </tr>
+      </table>
+      Jetzt die Speisekarte
+      <a href="Download/speisekarte.pdf" target="_blank">herunterladen</a>
+    </div>
+
+    <div class="container" id="contact">
+      <h2 class="playwrite">Kontakt</h2>
+      So kannst du uns kontaktieren:<br />
+      Telefon: <a href="tel:01723778107">01723778107</a><br />
+      E-Mail: <a href="mailto:info@info.de">info@info.de</a><br />
+    </div>
+
+    <div class="footer">
+      <div>(C) Copyright Norman Pfalzer</div>
+
+      <div>
+        <a href="impressum.html" class="footer-link" target="_blank"
+          >Impressum</a
+        >
+        |<a href="datenschutz.html" class="footer-link" target="_blank"
+          >Datenschutz</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

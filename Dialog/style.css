@@ -1,0 +1,8 @@
+
+dialog{
+    border:5px solid red;
+}
+
+dialog::backdrop{
+    background-color: aqua;
+}

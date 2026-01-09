@@ -1,0 +1,714 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    position: relative;
+    text-decoration: none;
+    list-style: none;
+}
+
+        .h1 {
+            font-family: Raleway;
+            font-size: 96px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            margin-top: 80px;
+        }
+
+        .h2-raleway {
+            font-family: Raleway;
+            font-size: 80px;
+            font-weight: bold;
+            color: #9f0908;
+        }
+
+        .di-raleway {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .h2-economica {
+            font-family: economica;
+            font-size: 56px;
+            font-weight: bold;
+            color: black;
+            padding-bottom: 16px;
+        }
+
+        td {
+            padding: 8px 0;
+        }
+
+body {
+    margin: 0;
+    font-family: raleway;
+    font-size: 24px;
+}
+
+.content {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-left: 24px;
+        padding-right: 24px;
+}
+
+
+.header {
+    background-image: url('./img/hero_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.aot {
+    height: 112px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.aot-logo {
+    height: 64px;
+    width: 64px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 24px;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.nav a {
+    color: white;
+}
+
+.nav a:hover {
+    color: #9f0908;
+}
+
+.cta {
+    display: flex;
+    height: 50px;
+    width: 230px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px solid white;
+    background-color: #9f0908;
+    border-radius: 10px;
+    color: white;
+}
+
+.cta-img {
+    height: 24px;
+}
+
+.cta:hover {
+    background-color: teal;
+}
+
+.h1, #tbrit {
+    width: 100%;
+    text-align: center;
+}
+
+.how-to-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 120px 0 120px;
+    padding: 0px;
+}
+
+.h2-raleway {
+    text-align: center;
+}
+
+.hto-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px 0 0;
+    margin: 0;
+    gap: 80px;
+}
+
+.hto-desimg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-hto {
+    height: 128px;
+    width: auto;
+    padding-bottom: 16px;
+}
+
+.hto-description {
+    text-align: center;
+    font-family: economica;
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.our-menu {
+    background-image: url('./img/section_our_menu_bg.jpg');
+    background-size: cover;
+    padding: 120px 0 120px;
+}
+
+#om {
+    text-align: center;
+    margin-bottom: 64px;
+
+}
+
+#om-menu {
+    display: flex;
+    flex-direction: column;
+    font-family: raleway;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.om-table-tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    color: #675e54;
+}
+
+.om-table-rc {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    color: #675e54;
+}
+
+.om-table-sr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    color: #675e54;
+}
+
+td {
+    padding-bottom: 8px;
+}
+
+
+#om-img {
+    height: auto;
+    width: 352px;
+}
+
+.find-us-at {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#h2-fua {
+    padding-top: 120px;
+}
+
+#map-marker {
+    height: 24px;
+    width: 24px;
+}
+
+.find-us-adress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px 0 64px;
+}
+
+.iframe {
+    height: 450px;
+    width: auto;
+}
+
+.footer {
+    background-color: #0a141e;
+    width: 100%;
+    padding:0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 144px;
+}
+
+.footer-sakura-logo {
+    height: 44px;
+}
+
+.footer-sakura-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.logo-mobile {
+    display: block;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.footer-sakura-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.footer-social-media {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: auto;
+    gap: 16px;
+}
+
+.footer-social-media img {
+    height: 100%;
+    width: auto;
+}
+
+
+@media (max-width: 1280px) {
+
+    .content {
+            padding-left: 24px;
+            padding-right: 24px;
+    }
+        .h1 {
+            font-family: Raleway;
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            margin-top: 10px;
+        }
+
+    .h2-raleway {
+        font-size: 64px;
+    }
+
+    .hto-description {
+        font-size: 32px;
+    }
+
+    #om-menu {
+        font-size: 24px;
+        padding: 0;
+    }
+
+    .header {
+        height: 100dvh;
+    }
+
+    .aot {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 112px;
+    }
+
+    .aot-logo {
+        height: 64px;
+        width: 64px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .cta {
+        width: auto;
+        min-width: 140px;
+        height: 40px;
+        font-size: 20px;
+        padding: 6px;
+    }
+
+    #tbrit {
+        font-size: 20px;
+    }
+
+    .how-to-order {
+        margin: 96px 0 96px 0;
+    }
+
+    .hto-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 32px 0 0 24px;
+    }
+
+    .img-hto {
+        width: 112px;
+        height: auto;
+        padding-bottom: 8px;
+    }
+
+    #om {
+        padding: 96px 0 48px;
+    }
+
+    #om-img {
+        width: 352px;
+        height: 352px;
+    }
+
+    .om-table-tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 32px;
+    }
+
+    .om-table-rc {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        padding:0 0 32px;
+    }
+
+    .om-table-sr {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding:0 0 96px;
+    }
+
+    #th-tr {
+        text-align: left;
+        font-family: economica;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 16px;
+    }
+
+    #th-smr {
+        text-align: left;
+        font-family: economica;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 16px;
+    }
+
+    #th-sr {
+        text-align: left;
+        font-family: economica;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 16px;
+    }
+    
+    td {
+        margin: 0;
+        padding: 0 0 8px;
+        }
+
+    #h2-fua {
+        padding: 96px 0 0 0;
+    }
+
+    .find-us-adress {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        padding-bottom: 48px;
+    }
+
+    .footer {
+        height: 144px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+
+    .logo-desktop {
+        display: block;
+    }
+
+    .logo-mobile {
+        display: none;
+    }
+
+    .footer-sakura-logo {
+        height: 44px;
+        width: auto;
+    }
+    
+    .logo-mobile {
+        height: 100%;
+        width:  100%;
+    }
+
+
+    .footer-social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    #img-some {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .h1 {   
+        font-family: Raleway;
+        font-size: clamp(30px, 10vw, 44px);
+        font-weight: bold;
+        margin-bottom: 0px;
+        margin-top: 80px;
+        }
+
+    .h2-raleway {
+        font-size: clamp(26px, 10vw, 40px);
+    }
+
+    .hto-description {
+        font-size: 32px;
+    }
+
+    #om-menu {
+        font-size: 24px;
+        padding: 40px 0 0;
+    }
+
+    .header {
+        height: 50dvh;
+    }
+
+    .aot {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+    }
+
+    .aot-logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .cta {
+        width: auto;
+        min-width: 140px;
+        height: 40px;
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    #tbrit {
+        font-size: 16px;
+    }
+
+    .how-to-order {
+        margin: 72px 0 72px 0;
+    }
+
+    .hto-container {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 0 0 0px;
+    }
+
+    .img-hto {
+        width: 112px;
+        height: auto;
+        padding-bottom: 8px;
+    }
+
+    .our-menu {
+        
+    }
+
+    #om {
+        padding: 0 0 0;
+        margin-bottom: 0;
+
+    }
+
+    #om-img {
+        width: 250px;
+        height: 250px;
+        padding: 0;
+    }
+
+    .om-table-tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 16px;
+    }
+
+    .om-table-rc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 32px 0 16px;
+    }
+
+    .om-table-sr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding:24px 0 72px;
+    }
+
+    #th-tr {
+        text-align: left;
+        font-family: economica;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 8px;
+    }
+
+    #th-smr {
+        text-align: left;
+        font-family: economica;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 8px;
+    }
+
+    #th-sr {
+        text-align: left;
+        font-family: economica;
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 8px;
+    }
+    
+    td {
+        margin: 0;
+        padding: 0;
+        }
+
+    #h2-fua {
+        text-align: center;
+        padding-top: 72px;
+    }
+
+    .find-us-adress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        padding-bottom: 40px;
+    }
+
+    .footer {
+        height: 86px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block;
+    }
+
+    .footer-sakura-logo {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .logo-mobile {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    .footer-social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    #img-some {
+        height: 32px;
+        width: 32px;
+    }
+}
+
+
