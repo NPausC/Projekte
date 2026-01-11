@@ -1,5 +1,5 @@
 
-//#region Images
+//#region Bilder
 const images = [
     'Property 1=alaska-810433_1280.jpg', 
     'Property 1=anime-8788959_1280.jpg',
@@ -31,7 +31,7 @@ for (let i = 0; i < images.length; i++) {
     }
 }
 
-//#region open Dialog
+//#region Dialogbox öffnen
 
 function openImage(i) {
     currentIndex = i;
