@@ -24,6 +24,15 @@ body {
     flex-direction: column;
 }
 
+.content-wrapper {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
 header {
     width: 100%;
     height: 81px;
@@ -33,7 +42,9 @@ header {
     padding: 0 100px
 }
 
-.logo { height: 32px; }
+.logo {
+    height: 32px;
+}
 
 main {
     width: 100%;
@@ -72,12 +83,19 @@ h1 {
 
 #overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+#overlay.d-none {
+    display: none;
 }
 
 .overlay-card {
@@ -112,7 +130,9 @@ h1 {
     transition: transform 100ms;
 }
 
-.close-btn:hover { transform: scale(1.2); }
+.close-btn:hover {
+    transform: scale(1.2);
+}
 
 #full-image {
     width: 100%;
@@ -131,11 +151,14 @@ h1 {
     gap: 40px;
 }
 
-.nav-arrow { 
-    width: 60px; height: 60px; cursor: pointer; 
+.nav-arrow {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
 }
-.nav-arrow.next { 
-    transform: rotate(180deg); 
+
+.nav-arrow.next {
+    transform: rotate(180deg);
 }
 
 footer {
@@ -176,7 +199,8 @@ footer p {
     display: none;
 }
 
-.close-btn, .nav-btn {
+.close-btn,
+.nav-btn {
     background: transparent;
     border: none;
     padding: 0;
@@ -187,7 +211,8 @@ footer p {
     outline: none;
 }
 
-.close-btn:focus-visible, .nav-btn:focus-visible {
+.close-btn:focus-visible,
+.nav-btn:focus-visible {
     outline: 2px solid var(--accent-red);
     border-radius: 4px;
 }
@@ -204,9 +229,9 @@ footer p {
 
 @media (max-width: 768px) {
 
-    header { 
-        justify-content: center; 
-        padding: 0; 
+    header {
+        justify-content: center;
+        padding: 0;
     }
 
     h1 {
@@ -216,8 +241,8 @@ footer p {
         text-align: center;
     }
 
-    #image-gallery { 
-        gap: 16px; 
+    #image-gallery {
+        gap: 16px;
     }
 
     .thumbnail {
@@ -226,19 +251,19 @@ footer p {
         border-radius: 30px;
     }
 
-.overlay-card {
+    .overlay-card {
         width: 343px;
         height: 664px;
-        max-width: 95%;           
-        background-color: #09212A; 
+        max-width: 95%;
+        background-color: #09212A;
         border-radius: 40px;
         padding: 24px;
         display: flex;
-        flex-direction: column;   
-        justify-content: flex-start; 
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
-.overlay-header {
+    .overlay-header {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -246,30 +271,30 @@ footer p {
         margin-bottom: 32px;
     }
 
-.close-btn {
+    .close-btn {
         order: 1;
         width: 24px;
         height: 24px;
         margin-bottom: 12px;
     }
 
-#image-title { 
+    #image-title {
         order: 2;
-        width: 100%;              
+        width: 100%;
         font-size: 24px;
         font-weight: 700;
         text-align: left;
         color: white;
     }
-    
-#full-image {
+
+    #full-image {
         width: 100%;
         height: 375px;
         object-fit: cover;
-        border-radius: 12px;      
+        border-radius: 12px;
     }
 
-.overlay-footer {
+    .overlay-footer {
         margin-top: auto;
         width: 100%;
         display: flex;
@@ -277,4 +302,4 @@ footer p {
         align-items: center;
         gap: 40px;
     }
-}
+};
