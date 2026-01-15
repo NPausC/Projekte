@@ -18,6 +18,7 @@ function getArchivNoteTemplate(indexNote) {
             <p>${archivNotes[indexNote]}</p>
             <div class="card-footer">
                 <button class="btn" onclick="moveArchivNoteToTrash(${indexNote})">X</button>
+                <button class="btn" onclick="moveArchivToNotes(${indexNote})">⬆</button>
             </div>
         </div>
     `;
@@ -30,6 +31,7 @@ function getTrashNoteTemplate(indexNote) {
             <p>${trashNotes[indexNote]}</p>
             <div class="card-footer">
                 <button class="btn" onclick="deleteNoteFinal(${indexNote})">X</button>
+                <button class="btn" onclick="moveTrashToArchiv(${indexNote})">⬆</button>
             </div>
         </div>
     `;

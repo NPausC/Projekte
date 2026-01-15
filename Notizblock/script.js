@@ -104,6 +104,33 @@ function deleteNoteFinal(index) {
     renderTrashNotes();
 }
 
+function moveTrashToArchiv(index) {
+    // 1. Aus dem Trash herausschneiden
+    let title = trashNotesTitles.splice(index, 1);
+    let content = trashNotes.splice(index, 1);
+
+    // 2. Ins Archiv schieben
+    archivNotesTitles.push(title[0]);
+    archivNotes.push(content[0]);
+
+    // 3. Speichern und alles neu zeichnen
+    saveToLocalStorage();
+    renderAll();
+}
+
+function moveArchivToNotes(index) {
+    // 1. Aus dem Archiv herausschneiden
+    let title = archivNotesTitles.splice(index, 1);
+    let content = archivNotes.splice(index, 1);
+
+    // 2. In die Hauptliste schieben
+    notesTitles.push(title[0]);
+    notes.push(content[0]);
+
+    saveToLocalStorage();
+    renderAll();
+}
+
 function saveToLocalStorage() {
     localStorage.setItem("notesTitles", JSON.stringify(notesTitles));
     localStorage.setItem("notes", JSON.stringify(notes));
