@@ -54,10 +54,9 @@ main {
 }
 
 h1 {
-    font-size: 56px;
-    font-weight: 800;
+    /* Minimum 24px, wächst mit der Viewport-Breite, maximal 40px */
+    font-size: clamp(24px, 4vw + 10px, 40px);
     text-align: center;
-    margin-bottom: 40px;
 }
 
 #image-gallery {

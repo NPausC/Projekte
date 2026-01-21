@@ -1,0 +1,40 @@
+let books = [
+    {
+        "name": "Geheimnisse des Ozeans",
+        "author": "Clara Meer",
+        "likes": 1250,
+        "liked": true,
+        "price": 19.99,
+        "publishedYear": 2018,
+        "genre": "Fantasy",
+        "image": "img/book1.png",
+        "comments": [
+            {"name": "Leser123", "comment": "Ein faszinierendes Buch!"},
+            {"name": "Bookworm84", "comment": "Tolle Geschichte."}
+        ]
+    },
+    {
+        "name": "Der vergessene Pfad",
+        "author": "Maximilian Schwarz",
+        "likes": 980,
+        "liked": false,
+        "price": 14.50,
+        "publishedYear": 2021,
+        "genre": "Abenteuer",
+        "image": "img/book2.png",
+        "comments": []
+    },
+    {
+        "name": "Die Farben des Himmels",
+        "author": "Laura Blau",
+        "likes": 1520,
+        "liked": true,
+        "price": 22.95,
+        "publishedYear": 2019,
+        "genre": "Romantik",
+        "image": "img/book3.png",
+        "comments": [
+            {"name": "Peter", "comment": "Sehr bewegend geschrieben."}
+        ]
+    }
+];
