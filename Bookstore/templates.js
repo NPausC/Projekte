@@ -27,7 +27,7 @@ function getBookTemplate(i) {
             <div class="price-like">
                 <span class="price-tag">${book.price.toFixed(2)} €</span>
                 <span onclick="toggleLike(${i})" class="heart">
-                    ${book.likes} ${book.liked ? '❤️' : '🤍'}
+                    ${book.likes} ${book.liked ? "❤️" : "🤍"}
                 </span>
             </div>
         </div>
@@ -35,7 +35,7 @@ function getBookTemplate(i) {
 }
 
 function renderComments(index) {
-    let commentHtml = '';
+    let commentHtml = "";
     let comments = books[index].comments;
 
     if (comments.length === 0) {
