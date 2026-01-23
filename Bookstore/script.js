@@ -34,9 +34,9 @@ function toggleLike(index) {
     const book = books[index];
     book.liked = !book.liked;
     book.likes += book.liked ? 1 : -1;
-    
+
     saveToLocalStorage();
-    
+
     const heartElement = document.querySelector(`#book-${index} .heart`);
     if (heartElement) {
         heartElement.innerHTML = `${book.likes} ${book.liked ? "❤️" : "🤍"}`;
@@ -52,12 +52,14 @@ function addComment(index) {
     if (name && comment) {
         books[index].comments.push({ name, comment });
         saveToLocalStorage();
-        
-        const container = document.querySelector(`#book-${index} .comments-list-container`);
+
+        const container = document.querySelector(
+            `#book-${index} .comments-list-container`,
+        );
         if (container) {
             container.innerHTML = renderCommentsList(index);
         }
-        
+
         nameInput.value = "";
         commentInput.value = "";
     }

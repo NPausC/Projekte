@@ -60,7 +60,7 @@ h1 {
 }
 
 main {
-    flex: 1; 
+    flex: 1;
 }
 
 .book-container {
@@ -198,20 +198,20 @@ footer {
 
 @media (max-width: 450px) {
     .logo-area {
-        flex-direction: column; /* Stapelt Logo über der Headline */
-        gap: 10px;              /* Kleiner Abstand zwischen Logo und Text */
+        flex-direction: column;
+        gap: 10px;
     }
 
     .logo {
-        height: 50px;           /* Optional: Logo am Handy etwas kleiner machen */
+        height: 50px;
     }
 
     h1 {
-        font-size: 20px;        /* Schriftgröße für kleine Bildschirme optimieren */
+        font-size: 20px;
         text-align: center;
     }
 
     .book-card {
-        width: 100%;            /* Karten nutzen volle Breite */
+        width: 100%;
     }
 }

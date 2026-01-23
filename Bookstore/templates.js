@@ -25,7 +25,7 @@ function getBookTemplate(i) {
             </div>
 
             <div class="price-like">
-                <span class="price-tag">${book.price.toFixed(2).replace('.', ',')} €</span>
+                <span class="price-tag">${book.price.toFixed(2).replace(".", ",")} €</span>
                 <span onclick="toggleLike(${i})" class="heart">
                     ${book.likes} ${book.liked ? "❤️" : "🤍"}
                 </span>
