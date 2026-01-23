@@ -12,38 +12,55 @@ function renderBooks() {
     }
 }
 
-function toggleLike(index) {
-    if (books[index].liked) {
-        books[index].likes--;
-        books[index].liked = false;
-    } else {
-        books[index].likes++;
-        books[index].liked = true;
+function renderCommentsList(index) {
+    let commentHtml = "";
+    let comments = books[index].comments;
+
+    if (comments.length === 0) {
+        return '<p class="no-comments">Noch keine Kommentare...</p>';
     }
-    saveAndRefresh();
+
+    for (let j = 0; j < comments.length; j++) {
+        commentHtml += `
+            <div class="single-comment">
+                <strong>${comments[j].name}:</strong> ${comments[j].comment}
+            </div>
+        `;
+    }
+    return commentHtml;
+}
+
+function toggleLike(index) {
+    const book = books[index];
+    book.liked = !book.liked;
+    book.likes += book.liked ? 1 : -1;
+    
+    saveToLocalStorage();
+    
+    const heartElement = document.querySelector(`#book-${index} .heart`);
+    if (heartElement) {
+        heartElement.innerHTML = `${book.likes} ${book.liked ? "❤️" : "🤍"}`;
+    }
 }
 
 function addComment(index) {
     const nameInput = document.getElementById(`name-input-${index}`);
     const commentInput = document.getElementById(`comment-input-${index}`);
-
     const name = nameInput.value.trim();
     const comment = commentInput.value.trim();
 
-    if (name !== "" && comment !== "") {
-        books[index].comments.push({
-            name: name,
-            comment: comment,
-        });
+    if (name && comment) {
+        books[index].comments.push({ name, comment });
+        saveToLocalStorage();
+        
+        const container = document.querySelector(`#book-${index} .comments-list-container`);
+        if (container) {
+            container.innerHTML = renderCommentsList(index);
+        }
+        
         nameInput.value = "";
         commentInput.value = "";
-        saveAndRefresh();
     }
-}
-
-function saveAndRefresh() {
-    saveToLocalStorage();
-    renderBooks();
 }
 
 function saveToLocalStorage() {
