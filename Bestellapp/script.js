@@ -4,15 +4,19 @@ function initApp() {
 }
 
 function renderMenu() {
-    const menuSection = document.getElementById("dish-content");
-    if (!menuSection) return;
+    let menuSection = document.getElementById("dish-content");
+    if (menuSection == null) {
+        return;
+    }
+
     menuSection.innerHTML = "";
 
-    allDishes.forEach((category, catIdx) => {
-        const titleText =
-            catIdx === 0
-                ? `<span class="desktop-only">${category.categoryName}</span><span class="mobile-only">Burger</span>`
-                : category.categoryName;
+    for (let i = 0; i < allDishes.length; i++) {
+        let category = allDishes[i];
+        let titleText = category.categoryName;
+        if (i === 0) {
+            titleText = `<span class="desktop-only">${category.categoryName}</span><span class="mobile-only">Burger</span>`;
+        }
 
         menuSection.innerHTML += `
             <div class="category-header-container">
@@ -22,54 +26,74 @@ function renderMenu() {
                 </div>
             </div>`;
 
-        category.items.forEach((dish, dishIdx) => {
-            menuSection.innerHTML += createMenuCardHTML(dish, catIdx, dishIdx);
-        });
-    });
+        for (let j = 0; j < category.items.length; j++) {
+            let dish = category.items[j];
+            menuSection.innerHTML += createMenuCardHTML(dish, i, j);
+        }
+    }
 }
 
 function refreshBasketUI() {
-    const desktopList = document.getElementById("basket-items");
-    const mobileList = document.getElementById("mobile-basket-items");
+    let desktopList = document.getElementById("basket-items");
+    let mobileList = document.getElementById("mobile-basket-items");
 
     let subtotal = 0;
     let totalItemsCount = 0;
     let basketHTML = "";
 
-    allDishes.forEach((category, catIdx) => {
-        category.items.forEach((item, dishIdx) => {
-            if (item.amount > 0) {
-                basketHTML += createBasketItemHTML(item, catIdx, dishIdx);
-                subtotal += item.price * item.amount;
-                totalItemsCount += item.amount;
-            }
-        });
-    });
+    for (let i = 0; i < allDishes.length; i++) {
+        let category = allDishes[i];
 
-    if (desktopList) desktopList.innerHTML = basketHTML;
-    if (mobileList) mobileList.innerHTML = basketHTML;
+        for (let j = 0; j < category.items.length; j++) {
+            let item = category.items[j];
+
+            if (item.amount > 0) {
+                basketHTML += createBasketItemHTML(item, i, j);
+                subtotal = subtotal + item.price * item.amount;
+                totalItemsCount = totalItemsCount + item.amount;
+            }
+        }
+    }
+
+    if (desktopList) {
+        desktopList.innerHTML = basketHTML;
+    }
+    if (mobileList) {
+        mobileList.innerHTML = basketHTML;
+    }
 
     updateBasketBadge(totalItemsCount);
     calculateAndDisplayPrices(subtotal);
 }
 
 function addItemToBasket(catIdx, dishIdx) {
-    allDishes[catIdx].items[dishIdx].amount++;
+    let dish = allDishes[catIdx].items[dishIdx];
+    dish.amount = dish.amount + 1;
+    console.log("Added to basket: " + dish.name);
     refreshBasketUI();
 }
 
 function updateQuantity(catIdx, dishIdx, change) {
-    const dish = allDishes[catIdx].items[dishIdx];
-    dish.amount = Math.max(0, dish.amount + change);
+    let dish = allDishes[catIdx].items[dishIdx];
+    dish.amount = dish.amount + change;
+
+    if (dish.amount < 0) {
+        dish.amount = 0;
+    }
+    
     refreshBasketUI();
 }
 
 function calculateAndDisplayPrices(subtotal) {
-    const DELIVERY_FEE = subtotal > 0 ? 4.99 : 0;
-    const grandTotal = subtotal + DELIVERY_FEE;
+    let deliveryFee = 0;
+    if (subtotal > 0) {
+        deliveryFee = 4.99;
+    }
 
-    const formattedSubtotal = `${subtotal.toFixed(2).replace(".", ",")} €`;
-    const formattedGrandTotal = `${grandTotal.toFixed(2).replace(".", ",")} €`;
+    let grandTotal = subtotal + deliveryFee;
+
+    let formattedSubtotal = subtotal.toFixed(2).replace(".", ",") + " €";
+    let formattedGrandTotal = grandTotal.toFixed(2).replace(".", ",") + " €";
 
     document.getElementById("subtotal").innerText = formattedSubtotal;
     document.getElementById("total-price").innerText = formattedGrandTotal;
@@ -77,35 +101,55 @@ function calculateAndDisplayPrices(subtotal) {
     document.getElementById("mobile-total-price").innerText =
         formattedGrandTotal;
 
-    document.querySelectorAll(".buy-now-btn").forEach((button) => {
-        button.innerText = `Buy now (${formattedGrandTotal})`;
-    });
-}
-
-function updateBasketBadge(count) {
-    const badge = document.getElementById("basket-badge");
-    if (!badge) return;
-    badge.innerText = count;
-    badge.classList.toggle("hidden", count === 0);
-}
-
-function toggleMobileBasket() {
-    document.getElementById("mobile-basket-overlay").classList.toggle("hidden");
-    document.body.classList.toggle("no-scroll");
+    let buttons = document.querySelectorAll(".buy-now-btn");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].innerText = "Buy now (" + formattedGrandTotal + ")";
+    }
 }
 
 function completeOrder() {
-    const isBasketEmpty = allDishes.every((cat) =>
-        cat.items.every((dish) => dish.amount === 0),
-    );
-    if (isBasketEmpty) return alert("Your basket is empty!");
+    let empty = true;
+    for (let i = 0; i < allDishes.length; i++) {
+        for (let j = 0; j < allDishes[i].items.length; j++) {
+            if (allDishes[i].items[j].amount > 0) {
+                empty = false;
+            }
+        }
+    }
+
+    if (empty) {
+        alert("Please add items to your basket first!");
+        return;
+    }
 
     document.getElementById("mobile-basket-overlay").classList.add("hidden");
     document.getElementById("order-overlay").classList.remove("hidden");
     document.body.classList.add("no-scroll");
 
-    allDishes.forEach((cat) => cat.items.forEach((dish) => (dish.amount = 0)));
+    for (let i = 0; i < allDishes.length; i++) {
+        for (let j = 0; j < allDishes[i].items.length; j++) {
+            allDishes[i].items[j].amount = 0;
+        }
+    }
     refreshBasketUI();
+}
+
+function updateBasketBadge(count) {
+    let badge = document.getElementById("basket-badge");
+    if (badge) {
+        badge.innerText = count;
+        if (count > 0) {
+            badge.classList.remove("hidden");
+        } else {
+            badge.classList.add("hidden");
+        }
+    }
+}
+
+function toggleMobileBasket() {
+    let overlay = document.getElementById("mobile-basket-overlay");
+    overlay.classList.toggle("hidden");
+    document.body.classList.toggle("no-scroll");
 }
 
 function closeConfirmation() {
