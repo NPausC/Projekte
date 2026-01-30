@@ -105,6 +105,17 @@ header {
     filter: brightness(0) invert(1);
 }
 
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.main-logo {
+    height: 32px;
+    width: auto;
+}
+
 .hero {
     width: 100%;
     max-width: 1440px;
