@@ -32,3 +32,17 @@ function createBasketItemHTML(item, categoryIndex, dishIndex) {
             </div>
         </div>`;
 }
+
+function getCategoryHeaderHTML(category, catIdx) {
+    let titleText = category.categoryName;
+    if (catIdx === 0) {
+        titleText = `<span class="desktop-only">${category.categoryName}</span><span class="mobile-only">Burger</span>`;
+    }
+    return `
+        <div class="category-header-container">
+            <div class="category-header-content">
+                <img src="${category.categoryIcon}" class="category-icon">
+                <h2 class="category-title">${titleText}</h2>
+            </div>
+        </div>`;
+}

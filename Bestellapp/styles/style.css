@@ -65,7 +65,7 @@ a {
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 .no-scroll {
