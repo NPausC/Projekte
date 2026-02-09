@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="icon" type="image/x-icon" href="img/Pokeball_icon-icons.com_67533.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="template.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body onload="init()">
+
+    <div id="loading-screen" class="loading-overlay d-none">
+        <img src="img/simple_pokeball.gif" alt="Loading..." class="loading-gif">
+    </div>
+
+    <header>
+        <div class="header-content">
+            <img src="img/Pokeball_icon-icons.com_67533.png" alt="Logo" class="logo">
+            <h1>Pokedex</h1>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search Pokemon..." oninput="handleSearch()">
+                <button id="search-btn" onclick="executeSearch()" disabled class="search-btn">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="content">
+        <div id="pokemon-list" class="pokemon-grid"></div>
+
+        <div id="button-container">
+            <button id="load-more-btn" onclick="loadNextPokemon()">Load More</button>
+            <button id="back-btn" class="d-none" onclick="resetSearch()">Back</button>
+        </div>
+    </main>
+
+    <div id="overlay" class="overlay" onclick="closeOverlay()">
+        <div class="overlay-content" onclick="stopProp(event)">
+        </div>
+    </div>
+
+</body>
+
+</html>
