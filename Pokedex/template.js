@@ -25,8 +25,7 @@ function getPokemonCardHTML(pokemon, name, index) {
 
 function renderPokemonList() {
     const container =
-        document.getElementById("pokemon-list") ||
-        document.getElementById("pokemon-grid");
+        document.getElementById("pokemon-list");
 
     if (container) {
         container.innerHTML = "";
