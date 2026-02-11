@@ -57,6 +57,7 @@ input[type="text"] {
     border-radius: 8px;
     border: 1px solid #ccc;
     outline: none;
+    font-size: 16px;
 }
 
 .search-btn {
@@ -66,6 +67,7 @@ input[type="text"] {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .search-btn:disabled {
@@ -106,15 +108,12 @@ input[type="text"] {
 .tooltip::before {
     content: "";
     position: absolute;
-
     top: 50%;
     right: calc(100% + 4px);
     transform: translateY(-50%);
-
     border-width: 8px;
     border-style: solid;
     border-color: transparent transparent transparent rgba(20, 20, 20, 0.92);
-
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.12s ease-in-out;
