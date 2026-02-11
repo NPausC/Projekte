@@ -1,11 +1,11 @@
-function getPokemonCardHTML(pokemon, name, index) {
+function getPokemonCardHTML(pokemon, name, openIndex) {
     const mainType = pokemon.types[0].type.name;
     const imgUrl = pokemon.sprites.other.home.front_default;
     return (
         '<div class="pokemon-card ' +
         mainType +
         '" onclick="openOverlay(' +
-        index +
+        openIndex +
         ')">' +
         '<div class="card-header"><h3>' +
         name +
@@ -21,47 +21,6 @@ function getPokemonCardHTML(pokemon, name, index) {
         name +
         '"></div></div>'
     );
-}
-
-function renderPokemonList() {
-    const container =
-        document.getElementById("pokemon-list");
-
-    if (container) {
-        container.innerHTML = "";
-        for (let i = 0; i < allPokemon.length; i++) {
-            const pokemon = allPokemon[i];
-            const name =
-                pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-            container.innerHTML =
-                container.innerHTML + getPokemonCardHTML(pokemon, name, i);
-        }
-    }
-}
-
-function renderSearchResults(container) {
-    container.innerHTML = "";
-    toggleButtons(true);
-
-    for (let i = 0; i < searchResults.length; i++) {
-        const p = searchResults[i];
-        const name = p.name.charAt(0).toUpperCase() + p.name.slice(1);
-
-        const originalIndex = allPokemon.findIndex(
-            (pokemon) => pokemon.name === p.name,
-        );
-
-        container.innerHTML += getPokemonCardHTML(p, name, originalIndex);
-    }
-}
-
-function renderTypeBadges(types) {
-    let html = "";
-    for (let i = 0; i < types.length; i++) {
-        html =
-            html + '<span class="type-badge">' + types[i].type.name + "</span>";
-    }
-    return html;
 }
 
 function getOverlayHTML(pokemon, index) {
@@ -82,50 +41,26 @@ function getOverlayHTML(pokemon, index) {
             </div>
 
             <div class="stats-container">
-                ${renderStats(pokemon.stats)}
-                <div id="evolution-container" class="evolution-container">
-                    <button class="evo-load-btn" onclick="loadEvolutionChainByIndex(${index})">
-                        Load Evolution Chains
-                    </button>
+
+                <div class="tabs">
+                    <button class="tab-btn active" id="tab-stats" onclick="showStats(event)">Stats</button>
+                    <button class="tab-btn" id="tab-evo" onclick="showEvolution(event, ${index})">Evolution</button>
                 </div>
+
+                <div id="stats-view" class="tab-view">
+                    ${renderStats(pokemon.stats)}
+                </div>
+
+                <div id="evolution-view" class="tab-view d-none">
+                    <div id="evolution-container" class="evolution-container">
+                        <p id="evo-status" class="evo-status">Klicke auf „Evolution“, um zu laden…</p>
+                    </div>
+            </div>
+
+
             </div>
         </div>
     `;
-}
-
-function renderStats(stats) {
-    let html = "<h3>Base Stats</h3>";
-    for (let i = 0; i < stats.length; i++) {
-        html =
-            html +
-            "<p><b>" +
-            stats[i].stat.name.toUpperCase() +
-            ":</b> " +
-            stats[i].base_stat +
-            "</p>";
-    }
-    return html;
-}
-
-function renderEvolutions(names) {
-    const container = document.getElementById("evolution-container");
-
-    if (container) {
-        let html = '<h3>Evolution Chain</h3><div class="evo-row">';
-
-        for (let i = 0; i < names.length; i++) {
-            const name = names[i].charAt(0).toUpperCase() + names[i].slice(1);
-
-            html = html + '<div class="evo-item">' + name + "</div>";
-
-            if (i < names.length - 1) {
-                html = html + '<div class="evo-arrow">➔</div>';
-            }
-        }
-
-        html = html + "</div>";
-        container.innerHTML = html;
-    }
 }
 
 function renderNoPokemonFound(container, loadMoreBtn) {
