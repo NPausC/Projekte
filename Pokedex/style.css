@@ -74,7 +74,57 @@ input[type="text"] {
     cursor: not-allowed;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-flex;
+}
 
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+
+    top: 50%;
+    right: calc(100% + 12px);
+    transform: translateY(-50%);
+
+    background: rgba(20, 20, 20, 0.92);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease-in-out;
+    z-index: 99999;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    right: calc(100% + 4px);
+    transform: translateY(-50%);
+
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(20, 20, 20, 0.92);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.12s ease-in-out;
+    z-index: 99999;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+    opacity: 1;
+}
 
 .loading-overlay {
     position: fixed;

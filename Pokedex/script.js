@@ -61,10 +61,18 @@ async function loadEvolutionChainByIndex(index) {
 function handleSearch() {
     const searchInput = document.getElementById("search");
     const searchBtn = document.getElementById("search-btn");
+    const tooltip = document.getElementById("search-tooltip");
+
+    if (!searchInput || !searchBtn || !tooltip) return;
+
     const query = searchInput.value.toLowerCase();
 
-    if (searchBtn) {
-        searchBtn.disabled = query.length < 3;
+    if (query.length < 3) {
+        searchBtn.disabled = true;
+        tooltip.classList.add("show-tooltip");
+    } else {
+        searchBtn.disabled = false;
+        tooltip.classList.remove("show-tooltip");
     }
 
     if (query.length === 0) {

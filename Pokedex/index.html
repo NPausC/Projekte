@@ -23,7 +23,11 @@
             <h1>Pokedex</h1>
             <div class="search-container">
                 <input type="text" id="search" placeholder="Search Pokemon..." oninput="handleSearch()">
-                <button id="search-btn" onclick="executeSearch()" disabled class="search-btn">Search</button>
+                <span id="search-tooltip" class="tooltip" data-tooltip="type 3 letters">
+                    <button id="search-btn" onclick="executeSearch()" disabled class="search-btn">
+                        Search
+                    </button>
+                </span>
             </div>
         </div>
     </header>
